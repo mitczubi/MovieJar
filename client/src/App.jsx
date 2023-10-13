@@ -10,7 +10,6 @@ function App() {
   const location = useLocation();
   return (
     <>
-    <div>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home />} />
@@ -18,7 +17,6 @@ function App() {
           <Route path="Paper" element={<Paper />} />
         </Routes>
       </AnimatePresence>
-    </div>
     </>
   )
 }
