@@ -6,7 +6,7 @@ class WatchedBase(BaseModel):
     title: str
 
 class WatchedCreateSchema(WatchedBase):
-    watched_date: Optional[date] = Field(default=date.today)
+    watched_date: Optional[date] = date.today()
     
 
 class WatchedSchema(WatchedBase):
