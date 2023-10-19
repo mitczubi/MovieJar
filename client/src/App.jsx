@@ -5,6 +5,7 @@ import Home from "./Home";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Jar from "./Jar";
 import Paper from "./Paper";
+import Stats from "./Stats";
 
 function App() {
   const location = useLocation();
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="Jar" element={<Jar />} />
           <Route path="Paper" element={<Paper />} />
+          <Route path="Stats" element={<Stats />} />
         </Routes>
       </AnimatePresence>
     </>
