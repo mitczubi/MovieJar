@@ -14,6 +14,8 @@ import { ArrowLeft } from "react-bootstrap-icons";
 import { motion } from "framer-motion";
 
 function Paper() {
+    const baseUrl = "https://movie-jar-api-qlbheaw4za-uk.a.run.app"
+
     const [formData, setFormData] = useState({
         name: ''
     });
@@ -31,7 +33,7 @@ function Paper() {
         e.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:8000/api/movies/", formData);
+            const response = await axios.post(`${baseUrl}/api/movies/`, formData);
             if (response.status === 200) {
                 console.log('Movie added successfully');
                 setMovieCreated(true);

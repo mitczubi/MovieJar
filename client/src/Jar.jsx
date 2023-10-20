@@ -12,12 +12,13 @@ import { ArrowRight } from "react-bootstrap-icons";
 import { motion } from "framer-motion";
 
 function Jar() {
+    const baseUrl = "https://movie-jar-api-qlbheaw4za-uk.a.run.app"
     const [randomMovie, setRandomMovie] = useState(null);
     const [movieToDelete, setMovieToDelete] = useState(null);
     const [showDeleteModal, setShowDeleteModal] = useState(false);
 
     const fetchRandomMovie = () => {
-        axios.get("http://localhost:8000/api/movies/random/")
+        axios.get(`${baseUrl}/api/movies/random/`)
             .then(response => {
                 console.log(response.data);
                 setRandomMovie(response.data)
@@ -29,7 +30,7 @@ function Jar() {
 
     const handleDeleteMovie = async (movieId) => {
         try {
-            const response = await axios.delete(`http://localhost:8000/api/movies/${movieId}`);
+            const response = await axios.delete(`${baseUrl}/api/movies/${movieId}`);
             if (response.status === 200) {
                     console.log(`Movie with ID ${movieId} deleted successfully`);
                     setMovieToDelete(null);

@@ -7,7 +7,8 @@ from routers.watched import watched_router
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://movie-jar-client-qlbheaw4za-uk.a.run.app"
 ]
 
 app.add_middleware(
